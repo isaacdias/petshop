@@ -90,3 +90,4 @@ const apararUnhasPet = (pet) => {
 vacinacaoPets();
 adicionarPet('garfield', 'cachoro', 1, 'pastor alemão', 15, 'marina', '81 9876-1234', true, []);
 darBanhoPet(pets[3]);
+console.log(pets);
