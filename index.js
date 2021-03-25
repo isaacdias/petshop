@@ -63,12 +63,24 @@ const vacinacaoPets = () => {
     console.log(`${totalVacinados} animais foram vacinados nessa campanha.`)
 }
 
-const adicionarPet = (nome, tipo, Idade, raca, peso, tutor, contato, 
-    vacinado, servicos) => {
-    novoPet = {nome, tipo, Idade, raca, peso, tutor, contato,
-         vacinado, servicos};
-    pets.push(novoPet);
- }
+// const adicionarPet = (nome, tipo, Idade, raca, peso, tutor, contato, 
+//     vacinado, servicos) => {
+//     novoPet = {nome, tipo, Idade, raca, peso, tutor, contato,
+//          vacinado, servicos};
+//     pets.push(novoPet);
+//  }
+
+const adicionarPet = novoPet => {
+    if (typeof novoPet == "object") {
+
+        if (!novoPet.servicos) {
+            novoPet.servicos = [];
+        }
+        pets.push(novoPet);
+    } else {
+        console.log("Ops, insira um argumento valido!");
+    }
+}
 
  const darBanhoPet = (pet) => {
     pet.servicos.push('banho');
@@ -81,13 +93,17 @@ const tosarPet = (pet) => {
 }
 
 const apararUnhasPet = (pet) => {
-    pet.servicos.push('aparar');
+    pet.servicos.push('aparar-unhas');
     console.log(`O serviço aparar unha foi realizado no ${pet.nome}.`);
 }
 
 // listarPets();
 // vacinarPet(pets[0]);
 vacinacaoPets();
-adicionarPet('garfield', 'cachoro', 1, 'pastor alemão', 15, 'marina', '81 9876-1234', true, []);
+adicionarPet({nome: 'doug', tipo: 'cachoro', idade: 1, 
+    raca:'pastor alemão', peso: 15, tutor: 'marina',
+    contato: '81 9876-1234', vacinado: true, });
 darBanhoPet(pets[3]);
+tosarPet(pets[3]);
+apararUnhasPet(pets[3]);
 console.log(pets);
