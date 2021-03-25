@@ -74,3 +74,4 @@ const adicionarPet = (nome, tipo, Idade, raca, peso, tutor, contato,
 // listarPets();
 // vacinarPet(pets[0]);
 vacinacaoPets();
+adicionarPet('garfield', 'cachoro', 1, 'pastor alemão', 15, 'marina', '81 9876-1234', true, []);
