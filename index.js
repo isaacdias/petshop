@@ -75,6 +75,15 @@ const adicionarPet = (nome, tipo, Idade, raca, peso, tutor, contato,
     console.log(`O serviço banho foi realizado no ${pet.nome}.`);
 }
 
+const tosarPet = (pet) => {
+    pet.servicos.push('tosa');
+    console.log(`O serviço tosa foi realizado no ${pet.nome}.`);
+}
+
+const apararUnhasPet = (pet) => {
+    pet.servicos.push('aparar');
+    console.log(`O serviço aparar unha foi realizado no ${pet.nome}.`);
+}
 
 // listarPets();
 // vacinarPet(pets[0]);
