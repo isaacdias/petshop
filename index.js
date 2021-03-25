@@ -63,6 +63,13 @@ const vacinacaoPets = () => {
     console.log(`${totalVacinados} animais foram vacinados nessa campanha.`)
 }
 
+const adicionarPet = (nome, tipo, Idade, raca, peso, tutor, contato, 
+    vacinado, servicos) => {
+    novoPet = {nome, tipo, Idade, raca, peso, tutor, contato,
+         vacinado, servicos};
+    pets.push(novoPet);
+ }
+
 
 // listarPets();
 // vacinarPet(pets[0]);
