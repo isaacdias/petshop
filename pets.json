@@ -9,8 +9,18 @@
     "contato": "(81) 98765-4321",
     "vacinado": true,
     "servicos": [
-      "banho",
-      "corte-unha"
+      {
+        "nome": "Tosa",
+        "data": "26-03-2021"
+      },
+      {
+        "nome": "Banho",
+        "data": "26-03-2021"
+      },
+      {
+        "nome": "Aparar unhas",
+        "data": "26-03-2021"
+      }
     ]
   },
   {
@@ -23,8 +33,10 @@
     "contato": "(81) 98765-4321",
     "vacinado": true,
     "servicos": [
-      "banho",
-      "tosa"
+      {
+        "nome": "Aparar unhas",
+        "data": "26-03-2021"
+      }
     ]
   },
   {
@@ -37,7 +49,10 @@
     "contato": "(81) 98765-4321",
     "vacinado": true,
     "servicos": [
-      "banho"
+      {
+        "nome": "Banho",
+        "data": "26-03-2021"
+      }
     ]
   },
   {
@@ -50,42 +65,90 @@
     "contato": "81 9876-1234",
     "vacinado": true,
     "servicos": [
-      "banho",
-      "tosa",
-      "aparar-unhas"
+      {
+        "nome": "Tosa",
+        "data": "26-03-2021"
+      },
+      {
+        "nome": "Aparar unhas",
+        "data": "26-03-2021"
+      }
     ]
   },
   {
     "nome": "Maike",
     "tipo": "cachoro",
-    "idade": 1,
+    "idade": 2,
     "raca": "pastor alemão",
     "peso": 15,
     "tutor": "marina",
     "contato": "81 9876-1234",
     "vacinado": true,
-    "servicos": []
+    "servicos": [
+      {
+        "nome": "Tosa",
+        "data": "26-03-2021"
+      }
+    ]
   },
   {
     "nome": "mickey",
     "tipo": "cachoro",
-    "idade": 1,
+    "idade": 3,
     "raca": "pastor alemão",
     "peso": 15,
     "tutor": "marina",
     "contato": "81 9876-1234",
     "vacinado": true,
-    "servicos": []
+    "servicos": [
+      {
+        "nome": "Aparar unhas",
+        "data": "26-03-2021"
+      }
+    ]
   },
   {
     "nome": "Sam",
-    "tipo": "cachoro",
+    "tipo": "gato",
     "idade": 1,
-    "raca": "pastor alemão",
+    "raca": "siamês",
     "peso": 15,
     "tutor": "marina",
     "contato": "81 9876-1234",
     "vacinado": true,
-    "servicos": []
+    "servicos": [
+      {
+        "nome": "Banho",
+        "data": "26-03-2021"
+      },
+      {
+        "nome": "Aparar unhas",
+        "data": "26-03-2021"
+      }
+    ]
+  },
+  {
+    "nome": "Bob",
+    "tipo": "cachoro",
+    "idade": 12,
+    "raca": "poodle",
+    "peso": 4,
+    "tutor": "Thalita",
+    "contato": "81 9876-1234",
+    "vacinado": false,
+    "servicos": [
+      {
+        "nome": "Banho",
+        "data": "26-03-2021"
+      },
+      {
+        "nome": "Tosa",
+        "data": "26-03-2021"
+      },
+      {
+        "nome": "Aparar unhas",
+        "data": "26-03-2021"
+      }
+    ]
   }
 ]
