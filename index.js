@@ -65,22 +65,19 @@ const vacinacaoPets = () => {
 }
 
 const adicionarPet = novoPet => {
-    if (typeof novoPet == "object") {
+    if (typeof novoPet == 'object') {
 
         if (!novoPet.servicos) {
             novoPet.servicos = [];
         }
         pets.push(novoPet);
     } else {
-        console.log("Ops, insira um argumento valido!");
+        console.log('Insira um argumento valido!');
     }
 }
 
- const darBanhoPet = (pet) => {
-    pet.servicos.push({
-        'servico': 'banho',
-        'data': moment().format('DD-MM-YYYY')
-    });
+const darBanhoPet = pet => {
+    pet.servicos.push('banho');
     console.log(`O serviço banho foi realizado no ${pet.nome}.`);
 }
 
@@ -101,6 +98,6 @@ adicionarPet({nome: 'doug', tipo: 'cachoro', idade: 1,
     raca:'pastor alemão', peso: 15, tutor: 'marina',
     contato: '81 9876-1234', vacinado: true, });
 darBanhoPet(pets[3]);
-tosarPet(pets[3]);
-apararUnhasPet(pets[3]);
+// tosarPet(pets[3]);
+// apararUnhasPet(pets[3]);
 console.log(pets);
