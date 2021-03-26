@@ -97,7 +97,7 @@ const anosDeIdade = (pet) => {
     }
 }
 
-// vacinarPet(pets[6]);
+vacinarPet(pets[7]);
 // vacinacaoPets();
 // adicionarPet({nome: 'Bob', tipo: 'cachoro', idade: 12, 
 // raca:'poodle', peso: 4, tutor: 'Thalita',

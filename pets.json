@@ -135,7 +135,7 @@
     "peso": 4,
     "tutor": "Thalita",
     "contato": "81 9876-1234",
-    "vacinado": false,
+    "vacinado": true,
     "servicos": [
       {
         "nome": "Banho",
