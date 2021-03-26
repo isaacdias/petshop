@@ -39,10 +39,16 @@ const adicionarPet = novoPet => {
             novoPet.servicos = [];
         }
         pets.push(novoPet);
+        jsonPet = JSON.stringify(pets, null, 2);
+        fs.writeFile("pets.json", jsonPet , (err) => {
+            if (err) throw err;
+            console.log(`o pet ${novoPet.nome} foi cadastrado!`);
+         });
     } else {
         console.log('Insira um argumento valido!');
     }
 }
+
 
 const darBanhoPet = pet => {
     pet.servicos.push('banho');
@@ -61,7 +67,7 @@ const apararUnhasPet = (pet) => {
 
 // vacinarPet(pets[0]);
 // vacinacaoPets();
-adicionarPet({nome: 'Doug', tipo: 'cachoro', idade: 1, 
+adicionarPet({nome: 'snoop', tipo: 'cachoro', idade: 1, 
 raca:'pastor alemão', peso: 15, tutor: 'marina',
 contato: '81 9876-1234', vacinado: true, });
 // darBanhoPet(pets[3]);
