@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/isaacdias/petshop/issues"
   },
-  "homepage": "https://github.com/isaacdias/petshop#readme"
+  "homepage": "https://github.com/isaacdias/petshop#readme",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
 }

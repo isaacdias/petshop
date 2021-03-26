@@ -1,3 +1,4 @@
+const moment = require('moment');
 const nomePetshop = "PETSHOP AVANADE";
 
 let pets = [
@@ -63,13 +64,6 @@ const vacinacaoPets = () => {
     console.log(`${totalVacinados} animais foram vacinados nessa campanha.`)
 }
 
-// const adicionarPet = (nome, tipo, Idade, raca, peso, tutor, contato, 
-//     vacinado, servicos) => {
-//     novoPet = {nome, tipo, Idade, raca, peso, tutor, contato,
-//          vacinado, servicos};
-//     pets.push(novoPet);
-//  }
-
 const adicionarPet = novoPet => {
     if (typeof novoPet == "object") {
 
@@ -83,7 +77,10 @@ const adicionarPet = novoPet => {
 }
 
  const darBanhoPet = (pet) => {
-    pet.servicos.push('banho');
+    pet.servicos.push({
+        'servico': 'banho',
+        'data': moment().format('DD-MM-YYYY')
+    });
     console.log(`O serviço banho foi realizado no ${pet.nome}.`);
 }
 
