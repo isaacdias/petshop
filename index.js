@@ -98,6 +98,6 @@ adicionarPet({nome: 'doug', tipo: 'cachoro', idade: 1,
     raca:'pastor alemão', peso: 15, tutor: 'marina',
     contato: '81 9876-1234', vacinado: true, });
 darBanhoPet(pets[3]);
-// tosarPet(pets[3]);
-// apararUnhasPet(pets[3]);
+tosarPet(pets[3]);
+apararUnhasPet(pets[3]);
 console.log(pets);
