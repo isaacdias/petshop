@@ -1,41 +1,9 @@
-const moment = require('moment');
+const bandoDeDados = require('./pets.json');
+const fs = require('fs');
 const nomePetshop = "PETSHOP AVANADE";
 
-let pets = [
-    {
-        nome : 'Marvin',
-        tipo : 'gato',
-        idade : 7,
-        raca : 'não-definida',
-        peso : 3,
-        tutor : 'Isaac',
-        contato : '(81) 98765-4321',
-        vacinado : false,
-        servicos : ['banho', 'corte-unha']
-    },
-    {
-        nome : 'Hulk',
-        tipo : 'cachorro',
-        idade : 2,
-        raca : 'Doberman',
-        peso : 3,
-        tutor : 'Carlos',
-        contato : '(81) 98765-4321',
-        vacinado : false,
-        servicos : ['banho', 'tosa']
-    },
-    {
-        nome : 'Thor',
-        tipo : 'cachorro',
-        idade : 5,
-        raca : 'Pastor Alemão',
-        peso : 3,
-        tutor : 'Amanda',
-        contato : '(81) 98765-4321',
-        vacinado : false,
-        servicos : ['banho']
-    }
-];
+pets = bandoDeDados;
+
 
 const listarPets = () => {
     for (let pet of pets){
@@ -91,13 +59,14 @@ const apararUnhasPet = (pet) => {
     console.log(`O serviço aparar unha foi realizado no ${pet.nome}.`);
 }
 
-// listarPets();
 // vacinarPet(pets[0]);
-vacinacaoPets();
-adicionarPet({nome: 'doug', tipo: 'cachoro', idade: 1, 
-    raca:'pastor alemão', peso: 15, tutor: 'marina',
-    contato: '81 9876-1234', vacinado: true, });
-darBanhoPet(pets[3]);
-tosarPet(pets[3]);
-apararUnhasPet(pets[3]);
-console.log(pets);
+// vacinacaoPets();
+adicionarPet({nome: 'Doug', tipo: 'cachoro', idade: 1, 
+raca:'pastor alemão', peso: 15, tutor: 'marina',
+contato: '81 9876-1234', vacinado: true, });
+// darBanhoPet(pets[3]);
+// tosarPet(pets[3]);
+// apararUnhasPet(pets[3]);
+// console.log(pets);
+listarPets();
+
