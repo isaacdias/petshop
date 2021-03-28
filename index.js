@@ -14,6 +14,7 @@ const listarPets = () => {
         for (const servico of pet.servicos) {
             console.log(`Serviço: ${servico.nome} | Realizado em: ${servico.data}`);
         }
+        if (pet.vacinado ? console.log('Está vacinado!') : console.log('Não vacinado!'));
         console.log('-----------------------------')
     }
 }
@@ -97,11 +98,11 @@ const anosDeIdade = (pet) => {
     }
 }
 
-vacinarPet(pets[7]);
+// vacinarPet(pets[7]);
 // vacinacaoPets();
-// adicionarPet({nome: 'Bob', tipo: 'cachoro', idade: 12, 
-// raca:'poodle', peso: 4, tutor: 'Thalita',
-// contato: '81 9876-1234', vacinado: false, });
+// adicionarPet({nome: 'Bangela', tipo: 'gato', idade: 4, 
+// raca:'vira-lata', peso: 2, tutor: 'Carlos',
+// contato: '81 9876-1234', vacinado: true, });
 // darBanhoPet(pets[7]);
 // tosarPet(pets[7]);
 // apararUnhasPet(pets[7]);

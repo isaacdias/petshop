@@ -150,5 +150,27 @@
         "data": "26-03-2021"
       }
     ]
+  },
+  {
+    "nome": "Marley",
+    "tipo": "cachoro",
+    "idade": 4,
+    "raca": "vira-lata",
+    "peso": 3,
+    "tutor": "Gabriel",
+    "contato": "81 9876-1234",
+    "vacinado": false,
+    "servicos": []
+  },
+  {
+    "nome": "Bangela",
+    "tipo": "gato",
+    "idade": 4,
+    "raca": "vira-lata",
+    "peso": 2,
+    "tutor": "Carlos",
+    "contato": "81 9876-1234",
+    "vacinado": true,
+    "servicos": []
   }
 ]
