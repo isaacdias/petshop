@@ -96,7 +96,7 @@ const buscarPet = (pet) => {
         console.log(petEncontrado);
     }
     else{
-        console.log('Não')
+        console.log('Não encontrado')
     }
 }
 
