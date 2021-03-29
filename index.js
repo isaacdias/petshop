@@ -90,6 +90,16 @@ const atenderCliente = (pet, servico) => {
     console.log('Obrigado, volte sempre.')
 }
 
+const buscarPet = (pet) => {
+    const petEncontrado = bancoDeDados.pets.find(petAtual => petAtual.nome == pet.nome)
+    if (petEncontrado) {
+        console.log(petEncontrado);
+    }
+    else{
+        console.log('Não')
+    }
+}
+
 const atualizarBancoDeDados = () => {
     jsonPet = JSON.stringify(bancoDeDados, null, 2);
     fs.writeFileSync("pets.json", jsonPet , (err) => {
@@ -108,7 +118,7 @@ const anosDeIdade = (pet) => {
 
 
 // vacinarPet(bancoDeDados.pets[9]);
-vacinacaoPets();
+// vacinacaoPets();
 // adicionarPet({nome: 'pluto', tipo: 'cachorro', idade: 4, 
 // raca:'vira-lata', peso: 2, tutor: 'Carlos',
 // contato: '81 9876-1234', vacinado: true, });
@@ -116,4 +126,5 @@ vacinacaoPets();
 // tosarPet(bancoDeDados.pets[9]);
 // apararUnhasPet(bancoDeDados.pets[9]);
 // atenderCliente(bancoDeDados.pets[7], apararUnhasPet(bancoDeDados.pets[7]))
-listarPets();
+buscarPet(bancoDeDados.pets[0]);
+// listarPets();
