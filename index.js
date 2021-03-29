@@ -1,14 +1,14 @@
-const bandoDeDados = require('./pets.json');
-const fs = require('fs');
-const moment = require('moment');
 const nomePetshop = "PETSHOP AVANADE";
+const moment = require('moment');
+const fs = require('fs');
+let bandoDeDados = fs.readFileSync('./pets.json');
 
-pets = bandoDeDados;
+bancoDeDados = JSON.parse(bandoDeDados);
 
 
 const listarPets = () => {
     
-    for (let pet of pets){
+    for (let pet of bancoDeDados.pets){
         console.log(`${pet.nome}, ${pet.idade} ${anosDeIdade(pet)} , ${pet.tipo}, raça ${pet.raca}.`);
 
         for (const servico of pet.servicos) {
@@ -32,7 +32,7 @@ const vacinarPet = (pet) => {
 
 const vacinacaoPets = () => {
     totalVacinados = 0;
-    for (let pet of pets) {
+    for (let pet of bancoDeDados.pets) {
         if (pet.vacinado === false){
             pet.vacinado = true;
             totalVacinados++;
@@ -47,7 +47,7 @@ const adicionarPet = novoPet => {
         if (!novoPet.servicos) {
             novoPet.servicos = [];
         }
-        pets.push(novoPet);
+        bancoDeDados.pets.push(novoPet);
         atualizarBancoDeDados()
         console.log(`o pet ${novoPet.nome} foi cadastrado!`);
     } else {
@@ -86,12 +86,11 @@ const apararUnhasPet = (pet) => {
 const atenderCliente = (pet, servico) => {
     console.log(`Olá, iremos cuidar do ${pet.nome}`)
     servico;
-
 }
 
 const atualizarBancoDeDados = () => {
-    jsonPet = JSON.stringify(pets, null, 2);
-    fs.writeFile("pets.json", jsonPet , (err) => {
+    jsonPet = JSON.stringify(bancoDeDados, null, 2);
+    fs.writeFileSync("pets.json", jsonPet , (err) => {
         if (err) throw err;
     });
 }
@@ -104,14 +103,13 @@ const anosDeIdade = (pet) => {
     }
 }
 
-// vacinarPet(pets[7]);
+// vacinarPet(bancoDeDados.pets[9]);
 // vacinacaoPets();
-// adicionarPet({nome: 'Bangela', tipo: 'gato', idade: 4, 
+// adicionarPet({nome: 'pluto', tipo: 'cachorro', idade: 4, 
 // raca:'vira-lata', peso: 2, tutor: 'Carlos',
 // contato: '81 9876-1234', vacinado: true, });
-// darBanhoPet(pets[7]);
-// tosarPet(pets[7]);
-// apararUnhasPet(pets[7]);
-// console.log(pets);
-// atenderCliente(pets[8], apararUnhasPet(pets[8]))
+// darBanhoPet(bancoDeDados.pets[9]);
+// tosarPet(bancoDeDados.pets[9]);
+// apararUnhasPet(bancoDeDados.pets[9]);
+// atenderCliente(bancoDeDados.pets[8], apararUnhasPet(bancoDeDados.pets[8]))
 listarPets();
