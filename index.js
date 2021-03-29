@@ -14,7 +14,7 @@ const listarPets = () => {
         for (const servico of pet.servicos) {
             console.log(`Serviço: ${servico.nome} | Realizado em: ${servico.data}`);
         }
-        if (pet.vacinado ? console.log('Está vacinado!') : console.log('Não vacinado!'));
+        pet.vacinado ? console.log('Está vacinado!') : console.log('Não vacinado!');
         console.log('-----------------------------')
     }
 }
@@ -84,8 +84,9 @@ const apararUnhasPet = (pet) => {
 }
 
 const atenderCliente = (pet, servico) => {
-    console.log(`Olá, iremos cuidar do ${pet.nome}`)
+    console.log(`Olá, seja bem vindo, iremos cuidar do ${pet.nome}`)
     servico;
+    console.log('Obrigado, volte sempre.')
 }
 
 const atualizarBancoDeDados = () => {
@@ -111,5 +112,5 @@ const anosDeIdade = (pet) => {
 // darBanhoPet(bancoDeDados.pets[9]);
 // tosarPet(bancoDeDados.pets[9]);
 // apararUnhasPet(bancoDeDados.pets[9]);
-// atenderCliente(bancoDeDados.pets[8], apararUnhasPet(bancoDeDados.pets[8]))
-listarPets();
+atenderCliente(bancoDeDados.pets[7], apararUnhasPet(bancoDeDados.pets[7]))
+// listarPets();
