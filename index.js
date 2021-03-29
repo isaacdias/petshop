@@ -31,14 +31,15 @@ const vacinarPet = (pet) => {
 }
 
 const vacinacaoPets = () => {
-    totalVacinados = 0;
-    for (let pet of bancoDeDados.pets) {
-        if (pet.vacinado === false){
-            pet.vacinado = true;
-            totalVacinados++;
-            atualizarBancoDeDados()        }
-    }
-    console.log(`${totalVacinados} animais foram vacinados nessa campanha.`)
+    let petsVacinados = 0
+
+    bancoDeDados.pets.map(pet => {
+        if (!pet.vacinado) {
+            vacinarPet(pet)
+            petsVacinados++
+        }
+    })
+    console.log(`${petsVacinados} pets foram vacinados!`)
 }
 
 const adicionarPet = novoPet => {
@@ -104,13 +105,15 @@ const anosDeIdade = (pet) => {
     }
 }
 
+
+
 // vacinarPet(bancoDeDados.pets[9]);
-// vacinacaoPets();
+vacinacaoPets();
 // adicionarPet({nome: 'pluto', tipo: 'cachorro', idade: 4, 
 // raca:'vira-lata', peso: 2, tutor: 'Carlos',
 // contato: '81 9876-1234', vacinado: true, });
 // darBanhoPet(bancoDeDados.pets[9]);
 // tosarPet(bancoDeDados.pets[9]);
 // apararUnhasPet(bancoDeDados.pets[9]);
-atenderCliente(bancoDeDados.pets[7], apararUnhasPet(bancoDeDados.pets[7]))
-// listarPets();
+// atenderCliente(bancoDeDados.pets[7], apararUnhasPet(bancoDeDados.pets[7]))
+listarPets();
