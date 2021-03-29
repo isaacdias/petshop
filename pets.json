@@ -20,6 +20,10 @@
       {
         "nome": "Aparar unhas",
         "data": "26-03-2021"
+      },
+      {
+        "nome": "Aparar unhas",
+        "data": "29-03-2021"
       }
     ]
   },
@@ -160,17 +164,11 @@
     "tutor": "Gabriel",
     "contato": "81 9876-1234",
     "vacinado": false,
-    "servicos": []
-  },
-  {
-    "nome": "Bangela",
-    "tipo": "gato",
-    "idade": 4,
-    "raca": "vira-lata",
-    "peso": 2,
-    "tutor": "Carlos",
-    "contato": "81 9876-1234",
-    "vacinado": true,
-    "servicos": []
+    "servicos": [
+      {
+        "nome": "Aparar unhas",
+        "data": "29-03-2021"
+      }
+    ]
   }
 ]

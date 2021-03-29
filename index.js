@@ -83,6 +83,12 @@ const apararUnhasPet = (pet) => {
     console.log(`O serviço de aparar unhas foi realizado no ${pet.nome}.`);
 }
 
+const atenderCliente = (pet, servico) => {
+    console.log(`Olá, iremos cuidar do ${pet.nome}`)
+    servico;
+
+}
+
 const atualizarBancoDeDados = () => {
     jsonPet = JSON.stringify(pets, null, 2);
     fs.writeFile("pets.json", jsonPet , (err) => {
@@ -107,5 +113,5 @@ const anosDeIdade = (pet) => {
 // tosarPet(pets[7]);
 // apararUnhasPet(pets[7]);
 // console.log(pets);
+// atenderCliente(pets[8], apararUnhasPet(pets[8]))
 listarPets();
-
