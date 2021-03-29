@@ -62,7 +62,7 @@
     },
     {
       "nome": "doug",
-      "tipo": "cachoro",
+      "tipo": "cachorro",
       "idade": 1,
       "raca": "pastor alemão",
       "peso": 15,
@@ -82,7 +82,7 @@
     },
     {
       "nome": "Maike",
-      "tipo": "cachoro",
+      "tipo": "cachorro",
       "idade": 2,
       "raca": "pastor alemão",
       "peso": 15,
@@ -98,7 +98,7 @@
     },
     {
       "nome": "mickey",
-      "tipo": "cachoro",
+      "tipo": "cachorro",
       "idade": 3,
       "raca": "pastor alemão",
       "peso": 15,
@@ -134,7 +134,7 @@
     },
     {
       "nome": "Bob",
-      "tipo": "cachoro",
+      "tipo": "cachorro",
       "idade": 12,
       "raca": "poodle",
       "peso": 4,
@@ -166,7 +166,7 @@
     },
     {
       "nome": "Marley",
-      "tipo": "cachoro",
+      "tipo": "cachorro",
       "idade": 4,
       "raca": "vira-lata",
       "peso": 3,

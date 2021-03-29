@@ -100,6 +100,15 @@ const buscarPet = (pet) => {
     }
 }
 
+const filtrarPet = (tipoPet) => {
+    const tiposDePets = bancoDeDados.pets.filter(pet => pet.tipo == tipoPet)
+    console.log(`${tipoPet}s`)
+    console.log('')
+    for (let pet of tiposDePets) {
+        console.log(`${pet.nome}.`);
+    }
+}
+
 const atualizarBancoDeDados = () => {
     jsonPet = JSON.stringify(bancoDeDados, null, 2);
     fs.writeFileSync("pets.json", jsonPet , (err) => {
@@ -126,5 +135,6 @@ const anosDeIdade = (pet) => {
 // tosarPet(bancoDeDados.pets[9]);
 // apararUnhasPet(bancoDeDados.pets[9]);
 // atenderCliente(bancoDeDados.pets[7], apararUnhasPet(bancoDeDados.pets[7]))
-buscarPet(bancoDeDados.pets[0]);
+// buscarPet(bancoDeDados.pets[0]);
+filtrarPet('cachorro')
 // listarPets();
