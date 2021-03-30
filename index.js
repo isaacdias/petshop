@@ -46,18 +46,15 @@ const vacinacaoPets = () => {
     console.log(`${petsVacinados} pets foram vacinados!`)
 }
 
-const adicionarPet = novoPet => {
-    if (typeof novoPet == 'object') {
-
-        if (!novoPet.servicos) {
-            novoPet.servicos = [];
-        }
+const adicionarPet = (...novosPets) => {
+    novosPets.forEach((novoPet) => {
         bancoDeDados.pets.push(novoPet);
-        atualizarBancoDeDados()
-        console.log(`o pet ${novoPet.nome} foi cadastrado!`);
-    } else {
-        console.log('Insira um argumento valido!');
-    }
+    })
+
+    atualizarBancoDeDados();
+    novosPets.forEach((pet) => {
+        console.log(`${pet.nome} foi adicionado com sucesso!`);
+    })
 }
 
 
@@ -174,4 +171,4 @@ const anosDeIdade = (pet) => {
 // clientePremium(bancoDeDados.pets[1]);
 // console.log(contatoTutor(bancoDeDados.pets[0]));
 // filtrarTutor('Isaac');
-listarPets();
+// listarPets();
