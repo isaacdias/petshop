@@ -9,10 +9,10 @@ bancoDeDados = JSON.parse(bandoDeDados);
 const listarPets = () => {
     
     const petsList = bancoDeDados.pets.forEach(pet => {
-        let {nome, idade, tipo, raca, vacinado} = pet
+        let {nome, idade, tipo, raca, vacinado, servicos} = pet
         console.log(`${nome}, ${idade} ${anosDeIdade(pet)} , ${tipo}, raça ${raca}.`);
                 
-        for (const servico of pet.servicos) {
+        for (const servico of servicos) {
             let {nome, data} = servico
             console.log(`Serviço: ${nome} | Realizado em: ${data}`);
         }
@@ -143,7 +143,6 @@ const filtrarTutor = (nomeTutor) => {
     })
 }
 
-
 const atualizarBancoDeDados = () => {
     jsonPet = JSON.stringify(bancoDeDados, null, 2);
     fs.writeFileSync("pets.json", jsonPet , (err) => {
@@ -175,4 +174,4 @@ const anosDeIdade = (pet) => {
 // clientePremium(bancoDeDados.pets[1]);
 // console.log(contatoTutor(bancoDeDados.pets[0]));
 // filtrarTutor('Isaac');
-// listarPets();
+listarPets();
