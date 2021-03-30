@@ -8,15 +8,15 @@ bancoDeDados = JSON.parse(bandoDeDados);
 
 const listarPets = () => {
     
-    for (let pet of bancoDeDados.pets){
+    const petsList = bancoDeDados.pets.forEach(pet => {
         console.log(`${pet.nome}, ${pet.idade} ${anosDeIdade(pet)} , ${pet.tipo}, raça ${pet.raca}.`);
-
+                
         for (const servico of pet.servicos) {
             console.log(`Serviço: ${servico.nome} | Realizado em: ${servico.data}`);
         }
         pet.vacinado ? console.log('Está vacinado!') : console.log('Não vacinado!');
         console.log('-----------------------------')
-    }
+    });
 }
 
 const vacinarPet = (pet) => {
@@ -160,5 +160,5 @@ const anosDeIdade = (pet) => {
 // atenderCliente(bancoDeDados.pets[10], apararUnhasPet(bancoDeDados.pets[10]))
 // buscarPet(bancoDeDados.pets[0]);
 // filtrarPet('cachorro')
-clientePremium(bancoDeDados.pets[0])
-// listarPets();
+// clientePremium(bancoDeDados.pets[0])
+listarPets();
