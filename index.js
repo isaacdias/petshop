@@ -46,6 +46,24 @@ const vacinacaoPets = () => {
     console.log(`${petsVacinados} pets foram vacinados!`)
 }
 
+// const adicionarPet = novosPets => {
+//     if (typeof novosPets == 'object') {
+
+//         if (!novosPets.servicos) {
+//             novosPets.servicos = [];
+//         }
+//         novosPets.forEach((novoPet) => {
+//             bancoDeDados.pets.push(novoPet);
+//         })
+//         atualizarBancoDeDados()
+//         novosPets.forEach((pet) => {
+//             console.log(`o pet ${novoPet.nome} foi cadastrado!`);
+//         })
+//     } else {
+//         console.log('Insira um argumento valido!');
+//     }
+// }
+
 const adicionarPet = (...novosPets) => {
     novosPets.forEach((novoPet) => {
         bancoDeDados.pets.push(novoPet);
@@ -159,9 +177,9 @@ const anosDeIdade = (pet) => {
 
 // vacinarPet(bancoDeDados.pets[9]);
 // vacinacaoPets();
-// adicionarPet({nome: 'Eliot', tipo: 'gato', idade: 4, 
-// raca:'vira-lata', peso: 2, tutor: 'Ana',
-// contato: '81 9876-1234', vacinado: false, });
+adicionarPet({nome: 'teste', tipo: 'gato', idade: 4, 
+raca:'vira-lata', peso: 2, tutor: 'Ana',
+contato: '81 9876-1234', vacinado: false, });
 // darBanhoPet(bancoDeDados.pets[8]);
 // tosarPet(bancoDeDados.pets[9]);
 // apararUnhasPet(bancoDeDados.pets[0]);
