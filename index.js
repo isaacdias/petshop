@@ -9,17 +9,20 @@ bancoDeDados = JSON.parse(bandoDeDados);
 const listarPets = () => {
     
     const petsList = bancoDeDados.pets.forEach(pet => {
-        console.log(`${pet.nome}, ${pet.idade} ${anosDeIdade(pet)} , ${pet.tipo}, raça ${pet.raca}.`);
+        let {nome, idade, tipo, raca, vacinado} = pet
+        console.log(`${nome}, ${idade} ${anosDeIdade(pet)} , ${tipo}, raça ${raca}.`);
                 
         for (const servico of pet.servicos) {
-            console.log(`Serviço: ${servico.nome} | Realizado em: ${servico.data}`);
+            let {nome, data} = servico
+            console.log(`Serviço: ${nome} | Realizado em: ${data}`);
         }
-        pet.vacinado ? console.log('Está vacinado!') : console.log('Não vacinado!');
+        vacinado ? console.log('Está vacinado!') : console.log('Não vacinado!');
         console.log('-----------------------------')
     });
 }
 
 const vacinarPet = (pet) => {
+
     if (pet.vacinado === true) {
         console.log(`${pet.nome} já está vacinado`);
     }
@@ -123,6 +126,24 @@ const clientePremium = (pet) => {
     }
 };
 
+const contatoTutor = (pet) => {
+    let {nome, tutor, contato} = pet;
+    
+    return `Tutor: ${tutor}, Contato: ${contato}, Pet: ${nome}`;
+}
+
+const filtrarTutor = (nomeTutor) => {
+    let petsTutor = bancoDeDados.pets.filter((pet) => {
+        return pet.tutor == nomeTutor;
+    });
+    
+    console.log(`Pets do tutor ${nomeTutor}:`)
+    petsTutor.forEach((pet) => {
+        console.log(`${contatoTutor(pet)}`)
+    })
+}
+
+
 const atualizarBancoDeDados = () => {
     jsonPet = JSON.stringify(bancoDeDados, null, 2);
     fs.writeFileSync("pets.json", jsonPet , (err) => {
@@ -148,8 +169,10 @@ const anosDeIdade = (pet) => {
 // darBanhoPet(bancoDeDados.pets[8]);
 // tosarPet(bancoDeDados.pets[9]);
 // apararUnhasPet(bancoDeDados.pets[0]);
-atenderCliente(bancoDeDados.pets[1], apararUnhasPet)
+// atenderCliente(bancoDeDados.pets[1], apararUnhasPet)
 // console.log(buscarPet('Marvin'));
 // filtrarPet('cachorro')
-// clientePremium(bancoDeDados.pets[1])
+// clientePremium(bancoDeDados.pets[1]);
+// console.log(contatoTutor(bancoDeDados.pets[0]));
+// filtrarTutor('Isaac');
 // listarPets();
