@@ -228,7 +228,7 @@
       "peso": 2,
       "tutor": "Ana",
       "contato": "81 9876-1234",
-      "vacinado": false,
+      "vacinado": true,
       "servicos": [
         {
           "nome": "Banho",

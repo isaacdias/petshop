@@ -38,6 +38,7 @@ const vacinacaoPets = () => {
             vacinarPet(pet)
             petsVacinados++
         }
+        return petsVacinados;
     })
     console.log(`${petsVacinados} pets foram vacinados!`)
 }
@@ -93,15 +94,13 @@ const atenderCliente = (pet, servico) => {
     console.log('Obrigado, volte sempre.')
 }
 
-// falta corrigir a busca
-const buscarPet = (pet) => {
-    const petEncontrado = bancoDeDados.pets.find(petAtual => petAtual.nome == pet.nome)
-    if (petEncontrado) {
-        console.log(petEncontrado);
-    }
-    else{
-        console.log('Não encontrado')
-    }
+const buscarPet = (nomePet) => {
+
+    let petEncontrado = bancoDeDados.pets.find((pet) => {
+        return pet.nome == nomePet;
+    });
+
+    return petEncontrado ? petEncontrado : `Nenhum pet encontrado com nome ${nomePet}`;
 }
 
 const filtrarPet = (tipoPet) => {
@@ -158,7 +157,7 @@ const anosDeIdade = (pet) => {
 // tosarPet(bancoDeDados.pets[9]);
 // apararUnhasPet(bancoDeDados.pets[0]);
 // atenderCliente(bancoDeDados.pets[10], apararUnhasPet(bancoDeDados.pets[10]))
-// buscarPet(bancoDeDados.pets[0]);
+// console.log(buscarPet('Marvin'));
 // filtrarPet('cachorro')
-// clientePremium(bancoDeDados.pets[0])
+// clientePremium(bancoDeDados.pets[1])
 listarPets();
