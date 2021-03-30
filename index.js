@@ -65,7 +65,6 @@ const darBanhoPet = pet => {
     });
     atualizarBancoDeDados()
     console.log(`O serviço de banho foi realizado no ${pet.nome}.`);
-    clientePremium(pet)
 }
 
 const tosarPet = (pet) => {
@@ -75,7 +74,6 @@ const tosarPet = (pet) => {
     });
     atualizarBancoDeDados()
     console.log(`O serviço de tosa foi realizado no ${pet.nome}.`);
-    clientePremium(pet)
 }
 
 const apararUnhasPet = (pet) => {
@@ -85,12 +83,11 @@ const apararUnhasPet = (pet) => {
     });
     atualizarBancoDeDados()
     console.log(`O serviço de aparar unhas foi realizado no ${pet.nome}.`);
-    clientePremium(pet)
 }
 
 const atenderCliente = (pet, servico) => {
     console.log(`Olá, seja bem vindo, iremos cuidar do ${pet.nome}`)
-    servico;
+    servico(pet);
     console.log('Obrigado, volte sempre.')
 }
 
@@ -151,8 +148,8 @@ const anosDeIdade = (pet) => {
 // darBanhoPet(bancoDeDados.pets[8]);
 // tosarPet(bancoDeDados.pets[9]);
 // apararUnhasPet(bancoDeDados.pets[0]);
-// atenderCliente(bancoDeDados.pets[10], apararUnhasPet(bancoDeDados.pets[10]))
+atenderCliente(bancoDeDados.pets[1], apararUnhasPet)
 // console.log(buscarPet('Marvin'));
 // filtrarPet('cachorro')
-clientePremium(bancoDeDados.pets[1])
+// clientePremium(bancoDeDados.pets[1])
 // listarPets();
