@@ -113,23 +113,18 @@ const filtrarPet = (tipoPet) => {
 }
 
 const clientePremium = (pet) => {
-    const servicosRealizados = pet.servicos.map(servico => 1)
-    let servicosNecessarios = 5
-    if (servicosRealizados != 0) {
-        let quantidadeServicos = servicosRealizados.reduce((acumulador, valorAtual) => {
-            return acumulador + valorAtual
-        })
+    let nServicos = pet.servicos.length;
 
-        if(quantidadeServicos == servicosNecessarios) {
-            console.log(` ${pet.nome} ganhou um serviço grátis.`)
-        }else{
-            console.log(`Faltando ${servicosNecessarios - quantidadeServicos} serviço(s) para ganhar o bônus.`)
-        }
-
-    }else{
-        console.log(`Ainda não realizou nenhum serviço.`)
+    if (nServicos >= 5) {
+        console.log(
+            `Olá, ${pet.nome}! Você ganhou um serviço grátis.!`
+        );
+    } else {
+        console.log(
+            `Olá, ${pet.nome}! Você ainda não tem serviços gratis disponiveis!`
+        );
     }
-} 
+};
 
 const atualizarBancoDeDados = () => {
     jsonPet = JSON.stringify(bancoDeDados, null, 2);
@@ -159,5 +154,5 @@ const anosDeIdade = (pet) => {
 // atenderCliente(bancoDeDados.pets[10], apararUnhasPet(bancoDeDados.pets[10]))
 // console.log(buscarPet('Marvin'));
 // filtrarPet('cachorro')
-// clientePremium(bancoDeDados.pets[1])
-listarPets();
+clientePremium(bancoDeDados.pets[1])
+// listarPets();
