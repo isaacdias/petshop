@@ -25,6 +25,10 @@
         {
           "nome": "Aparar unhas",
           "data": "29-03-2021"
+        },
+        {
+          "nome": "Aparar unhas",
+          "data": "29-03-2021"
         }
       ]
     },
@@ -181,6 +185,10 @@
         {
           "nome": "Aparar unhas",
           "data": "29-03-2021"
+        },
+        {
+          "nome": "Banho",
+          "data": "29-03-2021"
         }
       ]
     },
@@ -208,6 +216,22 @@
         },
         {
           "nome": "Aparar unhas",
+          "data": "29-03-2021"
+        }
+      ]
+    },
+    {
+      "nome": "Eliot",
+      "tipo": "gato",
+      "idade": 4,
+      "raca": "vira-lata",
+      "peso": 2,
+      "tutor": "Ana",
+      "contato": "81 9876-1234",
+      "vacinado": false,
+      "servicos": [
+        {
+          "nome": "Banho",
           "data": "29-03-2021"
         }
       ]

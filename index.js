@@ -64,6 +64,7 @@ const darBanhoPet = pet => {
     });
     atualizarBancoDeDados()
     console.log(`O serviço de banho foi realizado no ${pet.nome}.`);
+    clientePremium(pet)
 }
 
 const tosarPet = (pet) => {
@@ -73,6 +74,7 @@ const tosarPet = (pet) => {
     });
     atualizarBancoDeDados()
     console.log(`O serviço de tosa foi realizado no ${pet.nome}.`);
+    clientePremium(pet)
 }
 
 const apararUnhasPet = (pet) => {
@@ -82,6 +84,7 @@ const apararUnhasPet = (pet) => {
     });
     atualizarBancoDeDados()
     console.log(`O serviço de aparar unhas foi realizado no ${pet.nome}.`);
+    clientePremium(pet)
 }
 
 const atenderCliente = (pet, servico) => {
@@ -90,6 +93,7 @@ const atenderCliente = (pet, servico) => {
     console.log('Obrigado, volte sempre.')
 }
 
+// falta corrigir a busca
 const buscarPet = (pet) => {
     const petEncontrado = bancoDeDados.pets.find(petAtual => petAtual.nome == pet.nome)
     if (petEncontrado) {
@@ -108,6 +112,25 @@ const filtrarPet = (tipoPet) => {
         console.log(`${pet.nome}.`);
     }
 }
+
+const clientePremium = (pet) => {
+    const servicosRealizados = pet.servicos.map(servico => 1)
+    let servicosNecessarios = 5
+    if (servicosRealizados != 0) {
+        let quantidadeServicos = servicosRealizados.reduce((acumulador, valorAtual) => {
+            return acumulador + valorAtual
+        })
+
+        if(quantidadeServicos == servicosNecessarios) {
+            console.log(` ${pet.nome} ganhou um serviço grátis.`)
+        }else{
+            console.log(`Faltando ${servicosNecessarios - quantidadeServicos} serviço(s) para ganhar o bônus.`)
+        }
+
+    }else{
+        console.log(`Ainda não realizou nenhum serviço.`)
+    }
+} 
 
 const atualizarBancoDeDados = () => {
     jsonPet = JSON.stringify(bancoDeDados, null, 2);
@@ -128,13 +151,14 @@ const anosDeIdade = (pet) => {
 
 // vacinarPet(bancoDeDados.pets[9]);
 // vacinacaoPets();
-// adicionarPet({nome: 'pluto', tipo: 'cachorro', idade: 4, 
-// raca:'vira-lata', peso: 2, tutor: 'Carlos',
-// contato: '81 9876-1234', vacinado: true, });
-// darBanhoPet(bancoDeDados.pets[9]);
+// adicionarPet({nome: 'Eliot', tipo: 'gato', idade: 4, 
+// raca:'vira-lata', peso: 2, tutor: 'Ana',
+// contato: '81 9876-1234', vacinado: false, });
+// darBanhoPet(bancoDeDados.pets[8]);
 // tosarPet(bancoDeDados.pets[9]);
-// apararUnhasPet(bancoDeDados.pets[9]);
-// atenderCliente(bancoDeDados.pets[7], apararUnhasPet(bancoDeDados.pets[7]))
+// apararUnhasPet(bancoDeDados.pets[0]);
+// atenderCliente(bancoDeDados.pets[10], apararUnhasPet(bancoDeDados.pets[10]))
 // buscarPet(bancoDeDados.pets[0]);
-filtrarPet('cachorro')
+// filtrarPet('cachorro')
+clientePremium(bancoDeDados.pets[0])
 // listarPets();
