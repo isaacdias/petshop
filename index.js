@@ -5,20 +5,20 @@ let bandoDeDados = fs.readFileSync('./pets.json');
 
 bancoDeDados = JSON.parse(bandoDeDados);
 
-
 const listarPets = () => {
-    
-    const petsList = bancoDeDados.pets.forEach(pet => {
+
+    bancoDeDados.pets.forEach((pet) => {
         let {nome, idade, tipo, raca, vacinado, servicos} = pet
-        console.log(`${nome}, ${idade} ${anosDeIdade(pet)} , ${tipo}, raça ${raca}.`);
-                
-        for (const servico of servicos) {
-            let {nome, data} = servico
-            console.log(`Serviço: ${nome} | Realizado em: ${data}`);
-        }
+
+        console.log(`${nome}, ${idade} anos, ${tipo}, ${raca}`);
+    
+        servicos.forEach((servico) => {
+            console.log(`${servico.data} - ${servico.nome}`);
+        })
         vacinado ? console.log('Está vacinado!') : console.log('Não vacinado!');
         console.log('-----------------------------')
-    });
+
+    })
 }
 
 const vacinarPet = (pet) => {
@@ -46,26 +46,11 @@ const vacinacaoPets = () => {
     console.log(`${petsVacinados} pets foram vacinados!`)
 }
 
-// const adicionarPet = novosPets => {
-//     if (typeof novosPets == 'object') {
-
-//         if (!novosPets.servicos) {
-//             novosPets.servicos = [];
-//         }
-//         novosPets.forEach((novoPet) => {
-//             bancoDeDados.pets.push(novoPet);
-//         })
-//         atualizarBancoDeDados()
-//         novosPets.forEach((pet) => {
-//             console.log(`o pet ${novoPet.nome} foi cadastrado!`);
-//         })
-//     } else {
-//         console.log('Insira um argumento valido!');
-//     }
-// }
-
 const adicionarPet = (...novosPets) => {
     novosPets.forEach((novoPet) => {
+        if (!novoPet.servicos) {
+            novoPet.servicos = [];
+        }
         bancoDeDados.pets.push(novoPet);
     })
 
@@ -177,9 +162,9 @@ const anosDeIdade = (pet) => {
 
 // vacinarPet(bancoDeDados.pets[9]);
 // vacinacaoPets();
-adicionarPet({nome: 'teste', tipo: 'gato', idade: 4, 
-raca:'vira-lata', peso: 2, tutor: 'Ana',
-contato: '81 9876-1234', vacinado: false, });
+// adicionarPet({nome: 'teste', tipo: 'gato', idade: 4, 
+// raca:'vira-lata', peso: 2, tutor: 'Ana',
+// contato: '81 9876-1234', vacinado: false, });
 // darBanhoPet(bancoDeDados.pets[8]);
 // tosarPet(bancoDeDados.pets[9]);
 // apararUnhasPet(bancoDeDados.pets[0]);
@@ -189,4 +174,4 @@ contato: '81 9876-1234', vacinado: false, });
 // clientePremium(bancoDeDados.pets[1]);
 // console.log(contatoTutor(bancoDeDados.pets[0]));
 // filtrarTutor('Isaac');
-// listarPets();
+listarPets();
